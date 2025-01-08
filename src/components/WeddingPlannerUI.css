@@ -1,0 +1,142 @@
+/* Body */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #fff, #fdf4e3);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+}
+
+/* Main App Container */
+.app-container {
+  text-align: center;
+}
+
+/* Background Container */
+.background {
+  position: relative;
+  width: 80%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Envelope Container */
+.envelope-container {
+  position: relative;
+  width: 300px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 20px;
+}
+
+/* Envelope Flap - Behind the invitation */
+.flap {
+  position: absolute;
+  top: -80px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-radius: 5px;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-top: 90px solid #fbe2c5;
+  z-index: 0;
+}
+
+/* Envelope Body */
+.envelope-body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #f7d9a9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  z-index: 2;
+}
+
+.flower-icon {
+  width: 30px;
+  height: 30px;
+  background-image: url('../images/flower.png'); 
+  background-size: contain;
+  background-position: center;
+  margin-bottom: 5px;
+  position: absolute;
+  top: 10%;
+  left: 17%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+/* Invitation Styles */
+.invitation {
+  width: 60%;
+  height: 60%;
+  background: #fff;
+  margin: 5px;
+  padding: 20px;
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.5em;
+  text-align: center;
+  border: 3px solid #FFD700;
+  border-spacing: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  position: absolute;
+  left: 15%;
+  top: -50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+/* Triangles positioned around the invitation */
+.bottom-triangle {
+  top: -10px;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 95%;
+  background: #f7d9a9;
+  clip-path: polygon(0 100%, 50% 50%, 100% 100%);
+  z-index: 3;
+  pointer-events: none;
+}
+
+.left-triangle {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 15px;
+  width: 100%;
+  height: 100%;
+  background: #f7d9a9;
+  clip-path: polygon(0 0, 50% 50%, 0 100%);
+  z-index: 3;
+  pointer-events: none;
+}
+
+.right-triangle {
+  content: '';
+  position: absolute;
+  right: 15px;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: #f7d9a9;
+  clip-path: polygon(100% 0, 50% 50%, 90% 100%);
+  z-index: 3;
+  pointer-events: none;
+}
+
+
