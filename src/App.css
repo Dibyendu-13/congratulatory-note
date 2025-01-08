@@ -14,3 +14,69 @@
 
 
   
+  .app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    min-height: 100vh;
+  }
+  
+  .company-logo img {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .component-container {
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 20px;
+  }
+  
+  .navigation-buttons {
+    display: flex;
+    margin-left: -30px;
+    gap: 10px;
+  }
+  
+  .nav-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(45deg, #ff4081, #ff7b90);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s, background-color 0.2s;
+  }
+  
+  .nav-button:hover {
+    transform: scale(1.05);
+    background-color: #ff6090;
+  }
+  
+  .nav-button:active {
+    transform: scale(0.95);
+  }
+  
+  @media (max-width: 768px) {
+    .nav-button {
+      font-size: 14px;
+      padding: 8px 16px;
+    }
+  
+    .company-logo img {
+      max-width: 100px;
+    }
+    .component-container {
+      margin-top: 550px;
+      margin-left: 30px;
+
+    }
+
+  }
+  

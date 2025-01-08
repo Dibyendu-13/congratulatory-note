@@ -1,193 +1,211 @@
 import React from "react";
 import { motion } from "framer-motion";
+import styled from "styled-components";
 import image from "../images/image.png"; // Wedding Decor Image
 
 const WeddingPlannerUI2 = () => {
   return (
-    <div style={styles.body}>
+    <Body>
       {/* Main Content */}
-      <div style={styles.container}>
+      <Container>
         {/* Left Section with Image */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          style={styles.imageContainer}
+          style={{
+            flex: 1,
+            display: "flex",
+            justifyContent: "center", // Centers horizontally
+            alignItems: "center", // Centers vertically
+            padding: "20px",
+          }}
         >
-          <img src={image} alt="Wedding Decor" style={styles.image} />
+          <Image src={image} alt="Wedding Decor" />
         </motion.div>
 
         {/* Vertical Divider */}
-        <div style={styles.divider}></div>
+        <Divider />
 
         {/* Right Section with Text */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          style={styles.textContainer}
+          style={{ flex: 1, padding: "20px" }}
         >
-          <h1 style={styles.heading}>
-            Anita, let our expert planners craft your special day
-          </h1>
+          <Heading>Anita, let our expert planners craft your special day</Heading>
 
           {/* Cards for Text Content */}
-          <div style={styles.cards}>
+          <Cards>
             {/* Card 1 */}
-            <motion.div whileHover={{ scale: 1.05 }} style={styles.card}>
-              <div style={styles.cardContent}>
-                <span style={styles.icon}>🌟</span>
-                <div>
-                  <h2 style={styles.cardHeading}>
-                    Unlock best venues, decors & more
-                  </h2>
-                  <p style={styles.cardText}>
-                    Tell us about your dream day & get a perfect proposal in
-                    your budget for FREE
-                  </p>
-                </div>
-              </div>
+            <motion.div whileHover={{ scale: 1.05 }} style={{ flex: 1 }}>
+              <Card>
+                <CardContent>
+                  <Icon>🌟</Icon>
+                  <div>
+                    <CardHeading>Unlock best venues, decors & more</CardHeading>
+                    <CardText>
+                      Tell us about your dream day & get a perfect proposal in your budget for FREE
+                    </CardText>
+                  </div>
+                </CardContent>
+              </Card>
             </motion.div>
 
             {/* Card 2 */}
-            <motion.div whileHover={{ scale: 1.05 }} style={styles.card}>
-              <div style={styles.cardContent}>
-                <span style={styles.icon}>🌟</span>
-                <div>
-                  <h2 style={styles.cardHeading}>800+ Flawless Celebrations</h2>
-                  <p style={styles.cardText}>
-                    Enjoy a perfect, stress-free wedding from the first visit to
-                    the final goodbyes
-                  </p>
-                </div>
-              </div>
+            <motion.div whileHover={{ scale: 1.05 }} style={{ flex: 1 }}>
+              <Card>
+                <CardContent>
+                  <Icon>🌟</Icon>
+                  <div>
+                    <CardHeading>800+ Flawless Celebrations</CardHeading>
+                    <CardText>
+                      Enjoy a perfect, stress-free wedding from the first visit to the final goodbyes
+                    </CardText>
+                  </div>
+                </CardContent>
+              </Card>
             </motion.div>
-          </div>
+          </Cards>
 
           {/* Centered Button */}
-          <div style={styles.buttonWrapper}>
+          <ButtonWrapper>
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
-              style={styles.button}
+              style={buttonStyle}
             >
               Get My FREE Proposal
             </motion.button>
-          </div>
+          </ButtonWrapper>
         </motion.div>
-      </div>
-    </div>
+      </Container>
+    </Body>
   );
 };
 
-// Styles
-const styles = {
-  body: {
-    fontFamily: "Arial, sans-serif",
-    margin: 0,
-    paddingTop: "200px",
-    minHeight: "100vh",
-    height: "100%",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-  },
-  container: {
-    display: "flex",
-    alignItems: "flex-start",
-    justifyContent: "space-between",
-    maxWidth: "1200px",
-    width: "100%",
-    padding: "40px 20px", // Adjusted padding for more spacing
-    backgroundColor: "#ffffff",
-    borderRadius: "20px",
-    boxShadow: "0 4px 15px rgba(0, 0, 0, 0.2)",
-    overflow: "hidden",
-  },
-  imageContainer: {
-    flex: 1.5,
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    padding: "20px",
-  },
-  image: {
-    width: "100%",
-    maxWidth: "400px",
-    borderRadius: "15px",
-  },
-  divider: {
-    width: "2px",
-    backgroundColor: "#ddd",
-    margin: "0 20px",
-  },
-  textContainer: {
-    flex: 1.8, // Reduced flex to make the right section narrower
-    padding: "20px",
-    maxWidth: "450px", // Added a maximum width to constrain text alignment
-    margin: "0 auto", // Center within its flex space
-  },
-  heading: {
-    fontSize: "28px",
-    fontWeight: "bold",
-    marginBottom: "20px",
-    textAlign: "center", // Center-align the heading
-    lineHeight: "1.4", // Adjust line height for better readability
-  },
-  cards: {
-    display: "flex",
-    flexDirection: "column",
-    gap: "20px",
-    marginBottom: "30px",
-  },
-  card: {
-    backgroundColor: "#fdfdfd",
-    borderRadius: "15px",
-    boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
-    padding: "20px",
-    display: "flex",
-    alignItems: "center",
-    textAlign: "left", // Ensure the text is left-aligned
-  },
-  cardContent: {
-    display: "flex",
-    alignItems: "center",
-    gap: "15px",
-  },
-  icon: {
-    fontSize: "28px",
-    color: "#ff4081",
-  },
-  cardHeading: {
-    fontSize: "20px",
-    fontWeight: "bold",
-    margin: 0,
-  },
-  cardText: {
-    fontSize: "14px",
-    color: "#555",
-    margin: 0,
-  },
-  buttonWrapper: {
-    display: "flex",
-    justifyContent: "center",
-    marginTop: "20px",
-  },
-  button: {
-    padding: "15px 30px",
-    fontSize: "18px",
-    fontWeight: "bold",
-    color: "#fff",
-    background: "linear-gradient(45deg, #ff4081, #ff7b90)",
-    border: "none",
-    borderRadius: "30px",
-    cursor: "pointer",
-    outline: "none",
-    boxShadow: "0 4px 10px rgba(0, 0, 0, 0.3)",
-  },
+// Styled Components
+const Body = styled.div`
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 15px;
+  }
+`;
+
+const Image = styled.img`
+  width: 100%;
+  max-width: 400px;
+  border-radius: 15px;
+  object-fit: cover;
+
+  @media (max-width: 768px) {
+    max-width: 350px;
+    margin-left:70px;
+    margin-bottom: 20px; // Adds spacing between image and text when stacked vertically
+  }
+`;
+
+const Divider = styled.div`
+  width: 2px;
+  background-color: #ddd;
+  margin: 0 20px;
+  display: block;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const Heading = styled.h1`
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  line-height: 1.4;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 18px;
+  }
+`;
+
+const Cards = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 30px;
+`;
+
+const Card = styled.div`
+  background-color: #fdfdfd;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+`;
+
+const CardContent = styled.div`
+  display: flex;
+  gap: 15px;
+`;
+
+const Icon = styled.span`
+  font-size: 28px;
+  color: #ff4081;
+`;
+
+const CardHeading = styled.h2`
+  font-size: 18px;
+  font-weight: bold;
+`;
+
+const CardText = styled.p`
+  font-size: 14px;
+  color: #555;
+`;
+
+const ButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+`;
+
+const buttonStyle = {
+  padding: "12px 24px",
+  fontSize: "16px",
+  fontWeight: "bold",
+  color: "#fff",
+  background: "linear-gradient(45deg, #ff4081, #ff7b90)",
+  border: "none",
+  borderRadius: "30px",
+  cursor: "pointer",
+  outline: "none",
+  boxShadow: "0 4px 10px rgba(0, 0, 0, 0.3)",
 };
 
 export default WeddingPlannerUI2;

@@ -7,6 +7,7 @@ function WeddingPlannerUI() {
     <div className="app-container">
       {/* Company logo at the top of the screen */}
      
+        
 
       <div className="background">
         {/* Envelope animation */}
